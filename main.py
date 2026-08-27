@@ -10,7 +10,8 @@ from google import genai
 
 from pypdf import PdfReader
 from docx import Document
-
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 # ============================================================
 # LOAD ENVIRONMENT VARIABLES
@@ -167,10 +168,7 @@ class ChatRequest(BaseModel):
 
 @app.get("/")
 def home():
-    return {
-        "message": "Sumit Kumar AI Portfolio API is working!"
-    }
-
+    return FileResponse("frontend/index.html")
 
 # ============================================================
 # AI PORTFOLIO CHATBOT
@@ -440,3 +438,4 @@ JOB DESCRIPTION:
             status_code=500,
             detail=f"Gemini API error: {str(e)}"
         )
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
