@@ -76,7 +76,7 @@ async function sendMessage() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/chat",
+            "https://sumits-ai-portfolio.onrender.com/chat",
             {
                 method: "POST",
 
@@ -139,7 +139,7 @@ if (jdButton) {
         try {
 
             const response = await fetch(
-                "http://127.0.0.1:8000/match-jd",
+                "https://sumits-ai-portfolio.onrender.com/match-jd",
                 {
                     method: "POST",
                     body: formData
