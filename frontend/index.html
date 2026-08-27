@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sumit Kumar | AI & ML </title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #030712;
+            color: white;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 8%;
+
+            background: rgba(3, 7, 18, 0.92);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #1f2937;
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #22c55e;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #9ca3af;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #22c55e;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 100px 20px 60px;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(34, 197, 94, 0.12),
+                    transparent 35%
+                ),
+                #030712;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            z-index: 2;
+        }
+
+        .hello {
+            color: #22c55e;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #22c55e;
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 3vw, 30px);
+            color: #d1d5db;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+
+            color: #9ca3af;
+            font-size: 16px;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 22px;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #16a34a;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #22c55e;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            border: 1px solid #22c55e;
+            color: #22c55e;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(34, 197, 94, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* ================= CODE WINDOW ================= */
+
+        .code-window {
+            width: 650px;
+            max-width: 90%;
+
+            margin: 55px auto 0;
+
+            background: #020617;
+
+            border: 1px solid #334155;
+            border-radius: 10px;
+
+            text-align: left;
+
+            box-shadow:
+                0 0 50px rgba(34, 197, 94, 0.08);
+        }
+
+        .window-bar {
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 15px;
+
+            background: #111827;
+
+            border-radius: 10px 10px 0 0;
+        }
+
+        .dot {
+            width: 9px;
+            height: 9px;
+
+            border-radius: 50%;
+
+            margin-right: 7px;
+        }
+
+        .dot-red {
+            background: #ef4444;
+        }
+
+        .dot-yellow {
+            background: #eab308;
+        }
+
+        .dot-green {
+            background: #22c55e;
+        }
+
+        .window-title {
+            margin-left: 15px;
+
+            color: #6b7280;
+            font-size: 11px;
+        }
+
+        .code {
+            padding: 25px;
+
+            font-family: Consolas, monospace;
+            font-size: 13px;
+
+            color: #d1d5db;
+        }
+
+        .code-green {
+            color: #22c55e;
+        }
+
+        .code-blue {
+            color: #60a5fa;
+        }
+
+        .code-purple {
+            color: #c084fc;
+        }
+
+        .code-yellow {
+            color: #facc15;
+        }
+
+        /* ================= TECH STACK ================= */
+
+        .tech-stack {
+            padding: 25px 8%;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            background: #020617;
+
+            border-top: 1px solid #111827;
+            border-bottom: 1px solid #111827;
+        }
+
+        .tech {
+            padding: 8px 15px;
+
+            border: 1px solid #1f2937;
+            border-radius: 20px;
+
+            color: #9ca3af;
+
+            font-size: 13px;
+        }
+
+        .tech:hover {
+            border-color: #22c55e;
+            color: #22c55e;
+        }
+
+        /* ================= COMMON SECTION ================= */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-size: 36px;
+        }
+
+        .section-heading span {
+            color: #22c55e;
+        }
+
+        .section-heading p {
+            color: #9ca3af;
+            margin-top: 10px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: #050b18;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #9ca3af;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+
+            margin-top: 40px;
+
+            flex-wrap: wrap;
+        }
+
+        .stat h3 {
+            font-size: 30px;
+            color: #22c55e;
+        }
+
+        .stat p {
+            font-size: 13px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills-grid {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #0b1220;
+
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+
+            padding: 25px;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: #22c55e;
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+            color: #22c55e;
+        }
+
+        .skill-card p {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            background: #050b18;
+        }
+
+        .projects-grid {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #0b1220;
+
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: #22c55e;
+            transform: translateY(-5px);
+        }
+
+        .project-number {
+            color: #22c55e;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .project-card h3 {
+            margin: 10px 0;
+            font-size: 22px;
+        }
+
+        .project-card p {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .project-tech {
+            margin-top: 20px;
+
+            color: #22c55e;
+            font-size: 12px;
+        }
+
+        /* ================= EXPERIENCE ================= */
+
+        .experience-card {
+            max-width: 850px;
+            margin: auto;
+
+            background: #0b1220;
+
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+
+            padding: 30px;
+        }
+
+        .experience-card h3 {
+            color: #22c55e;
+        }
+
+        .experience-card .date {
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        .experience-card ul {
+            margin-top: 20px;
+            padding-left: 20px;
+
+            color: #9ca3af;
+        }
+
+        /* ================= AI FEATURES ================= */
+
+        .ai-section {
+            background: #020617;
+        }
+
+        .ai-grid {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .ai-card {
+            background: #0b1220;
+
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .ai-card:hover {
+            border-color: #22c55e;
+        }
+
+        .ai-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .ai-card h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .ai-card h3 span {
+            color: #22c55e;
+        }
+
+        .ai-card p {
+            color: #9ca3af;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .ai-button {
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            background: #16a34a;
+
+            color: white;
+
+            border-radius: 5px;
+
+            font-size: 13px;
+        }
+        /* ================= CHATBOT ================= */
+
+.chatbot {
+    margin-top: 25px;
+}
+
+.chat-messages {
+    height: 280px;
+    overflow-y: auto;
+
+    background: #020617;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    text-align: left;
+}
+
+/* Scrollbar */
+
+.chat-messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #22c55e;
+    border-radius: 10px;
+}
+
+/* Bot message */
+
+.bot-message {
+    align-self: flex-start;
+
+    max-width: 85%;
+
+    padding: 11px 14px;
+
+    background: #111827;
+
+    border: 1px solid #1f2937;
+
+    border-radius: 10px 10px 10px 2px;
+
+    color: #d1d5db;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* User message */
+
+.user-message {
+    align-self: flex-end;
+
+    max-width: 85%;
+
+    padding: 11px 14px;
+
+    background: #166534;
+
+    border-radius: 10px 10px 2px 10px;
+
+    color: white;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Input area */
+
+.chat-input-area {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+/* Input */
+
+.chat-input-area input {
+    flex: 1;
+
+    padding: 12px 14px;
+
+    background: #020617;
+
+    border: 1px solid #1f2937;
+
+    border-radius: 6px;
+
+    color: white;
+
+    font-size: 13px;
+
+    outline: none;
+}
+
+.chat-input-area input::placeholder {
+    color: #6b7280;
+}
+
+.chat-input-area input:focus {
+    border-color: #22c55e;
+
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.08);
+}
+
+/* Send button */
+
+.chat-input-area button {
+    padding: 0 18px;
+
+    background: #16a34a;
+
+    border: none;
+
+    border-radius: 6px;
+
+    color: white;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.chat-input-area button:hover {
+    background: #22c55e;
+}
+
+.chat-input-area button:disabled {
+    background: #374151;
+
+    cursor: not-allowed;
+}
+
+        /* ================= EDUCATION ================= */
+
+        .education {
+            background: #050b18;
+        }
+
+        .education-card {
+            max-width: 850px;
+            margin: auto;
+
+            background: #0b1220;
+
+            border: 1px solid #1f2937;
+            border-radius: 10px;
+
+            padding: 30px;
+        }
+
+        .education-card h3 {
+            color: #22c55e;
+        }
+
+        .education-card p {
+            color: #9ca3af;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-box p {
+            color: #9ca3af;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            padding: 10px 18px;
+
+            border: 1px solid #1f2937;
+            border-radius: 5px;
+
+            color: #d1d5db;
+
+            font-size: 13px;
+        }
+
+        .contact-link:hover {
+            border-color: #22c55e;
+            color: #22c55e;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 25px;
+
+            text-align: center;
+
+            background: #020617;
+
+            border-top: 1px solid #111827;
+
+            color: #6b7280;
+
+            font-size: 12px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .ai-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .code-window {
+                font-size: 10px;
+            }
+
+            .stats {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+        }
+        .jd-result {
+    margin-top: 20px;
+    padding: 20px;
+    background: #020617;
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+    color: #d1d5db;
+    line-height: 1.7;
+    font-size: 14px;
+    max-height: 400px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.jd-result strong {
+    color: white;
+    font-weight: bold;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            <span>&lt;/&gt;</span> Sumit Kumar
+        </div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#ai">AI Tools</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="hello">
+                Hello World! I'm
+            </div>
+
+            <h1>
+                Sumit <span>Kumar</span>
+            </h1>
+
+            <h2>
+                AI Engineering | Machine Learning | Data Analysis
+            </h2>
+
+            <p>
+                Computer Science undergraduate specializing in AI & ML,
+                passionate about building intelligent solutions using
+                Python, Machine Learning, Generative AI and modern
+                development technologies.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    View Projects →
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+
+            <!-- CODE WINDOW -->
+
+            <div class="code-window">
+
+                <div class="window-bar">
+
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+
+                    <div class="window-title">
+                        sumit@ai-workspace
+                    </div>
+
+                </div>
+
+                <div class="code">
+
+                    <div>
+                        <span class="code-purple">class</span>
+                        <span class="code-blue">Developer</span>:
+                    </div>
+
+                    <br>
+
+                    <div>
+                        &nbsp;&nbsp;
+                        <span class="code-purple">name</span>
+                        =
+                        <span class="code-yellow">"Sumit Kumar"</span>
+                    </div>
+
+                    <div>
+                        &nbsp;&nbsp;
+                        <span class="code-purple">role</span>
+                        =
+                        <span class="code-yellow">"AI & ML Developer"</span>
+                    </div>
+
+                    <div>
+                        &nbsp;&nbsp;
+                        <span class="code-purple">skills</span>
+                        =
+                        [
+                        <span class="code-yellow">"Python"</span>,
+                        <span class="code-yellow">"AI"</span>,
+                        <span class="code-yellow">"FastAPI"</span>
+                        ]
+                    </div>
+
+                    <div>
+                        &nbsp;&nbsp;
+                        <span class="code-purple">passion</span>
+                        =
+                        <span class="code-green">"Building AI Solutions"</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TECHNOLOGIES ================= -->
+
+    <div class="tech-stack">
+
+        <div class="tech">Python</div>
+        <div class="tech">Java</div>
+        <div class="tech">FastAPI</div>
+        <div class="tech">Machine Learning</div>
+        <div class="tech">Deep Learning</div>
+        <div class="tech">LangChain</div>
+        <div class="tech">React.js</div>
+        <div class="tech">JavaScript</div>
+        <div class="tech">SQL</div>
+        <div class="tech">Power BI</div>
+        <div class="tech">AWS</div>
+        <div class="tech">Git</div>
+
+    </div>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+        <div class="section-heading">
+
+            <h2>
+                About <span>Me</span>
+            </h2>
+
+            <p>
+                A developer who enjoys turning ideas into intelligent solutions.
+            </p>
+
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                I am a Computer Science undergraduate at VIT-AP University,
+                specializing in Artificial Intelligence and Machine Learning.
+                My interests include Python development, Machine Learning,
+                Generative AI, Agentic AI and data-driven applications.
+            </p>
+
+            <p>
+                I have experience researching enterprise AI copilots,
+                Large Language Models, Prompt Engineering, RAG and
+                tool-calling mechanisms. I also enjoy working with data,
+                building dashboards and solving real-world problems.
+            </p>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h3>8.28</h3>
+                    <p>GPA</p>
+                </div>
+
+                <div class="stat">
+                    <h3>2027</h3>
+                    <p>Graduation</p>
+                </div>
+
+                <div class="stat">
+                    <h3>2+</h3>
+                    <p>Projects</p>
+                </div>
+
+                <div class="stat">
+                    <h3>AI/ML</h3>
+                    <p>Specialization</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <div class="section-heading">
+
+            <h2>
+                Skills & <span>Technologies</span>
+            </h2>
+
+            <p>
+                Technologies and tools I work with.
+            </p>
+
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>
+                    Python, Java
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>AI & Machine Learning</h3>
+                <p>
+                    Machine Learning, Deep Learning, NumPy,
+                    Pandas, Recommendation Systems, LangChain
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Data & Analytics</h3>
+                <p>
+                    SQL, Data Cleaning, Data Preprocessing,
+                    EDA, Data Visualization, Power BI, MS Excel
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>
+                    React.js, Node.js, Express.js,
+                    HTML, CSS, JavaScript
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Backend</h3>
+                <p>
+                    Python, FastAPI, REST APIs
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Cloud & Tools</h3>
+                <p>
+                    AWS, Git, GitHub, Power BI
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section class="projects" id="projects">
+
+        <div class="section-heading">
+
+            <h2>
+                Featured <span>Projects</span>
+            </h2>
+
+            <p>
+                Some of the projects I have worked on.
+            </p>
+
+        </div>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    Customer Behaviour Analysis
+                </h3>
+
+                <p>
+                    Analyzed customer shopping patterns to identify
+                    purchasing trends, customer preferences, spending
+                    behaviour and purchase frequency.
+                </p>
+
+                <div class="project-tech">
+                    Python · Pandas · SQL · Power BI
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    Real-Time Threat Detection
+                </h3>
+
+                <p>
+                    Developed a real-time video analysis system using
+                    computer vision and pre-trained models for threat
+                    detection and suspicious movement analysis.
+                </p>
+
+                <div class="project-tech">
+                    Python · OpenCV · YOLOv8 · MediaPipe
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <section id="experience">
+
+        <div class="section-heading">
+
+            <h2>
+                My <span>Experience</span>
+            </h2>
+
+        </div>
+
+        <div class="experience-card">
+
+            <h3>
+                AI Research Intern — Coding Jr
+            </h3>
+
+            <div class="date">
+                April 2025 – August 2025
+            </div>
+
+            <ul>
+                <li>
+                    Researched enterprise AI copilots and their
+                    architecture, capabilities and applications.
+                </li>
+
+                <li>
+                    Explored LLMs, Prompt Engineering, RAG and
+                    tool-calling mechanisms.
+                </li>
+
+                <li>
+                    Evaluated enterprise AI productivity tools,
+                    including their features, performance and
+                    security considerations.
+                </li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= AI FEATURES ================= -->
+
+    <section class="ai-section" id="ai">
+
+        <div class="section-heading">
+
+            <h2>
+                AI <span>Tools</span>
+            </h2>
+
+            <p>
+                Interactive AI features built into my portfolio.
+            </p>
+
+        </div>
+
+
+        <div class="ai-grid">
+
+
+            <!-- CHATBOT -->
+
+            <div class="ai-card">
+
+                <div class="ai-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    <span>AI</span> Portfolio Chatbot
+                </h3>
+
+                <p>
+                    Ask questions about my skills, projects,
+                    experience, education and technical background.
+                </p>
+
+                <div class="chatbot">
+
+    <div class="chat-messages" id="chatMessages">
+
+        <div class="bot-message">
+            👋 Hi! I'm Sumit's AI assistant.
+            Ask me anything about his skills,
+            projects, experience or education.
+        </div>
+
+    </div>
+
+    <div class="chat-input-area">
+
+        <input
+            type="text"
+            id="chatInput"
+            placeholder="Ask me about Sumit..."
+        >
+
+        <button id="sendButton">
+            Send
+        </button>
+
+    </div>
+
+</div>
+
+            </div>
+
+
+            <!-- JD MATCHER -->
+
+            <div class="ai-card">
+
+                <div class="ai-icon">
+                    📄
+                </div>
+
+                <h3>
+                    <span>JD</span> Matcher
+                </h3>
+
+                <p>
+                    Paste a job description and analyze how well
+                    my skills match the role, including missing
+                    skills and recommendations.
+                </p>
+
+                <input
+    type="file"
+    id="jdFile"
+    accept=".pdf,.docx"
+>
+
+<button id="jdButton" class="ai-button">
+    Analyze JD →
+</button>
+
+<div id="jdResult" class="jd-result"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section class="education" id="education">
+
+        <div class="section-heading">
+
+            <h2>
+                <span>Education</span>
+            </h2>
+
+        </div>
+
+        <div class="education-card">
+
+            <h3>
+                VIT-AP University
+            </h3>
+
+            <p>
+                Bachelor of Technology in Computer Science
+                — Specialization in AI & ML
+            </p>
+
+            <p>
+                September 2023 – June 2027 (Expected)
+            </p>
+
+            <p>
+                GPA: 8.28
+            </p>
+
+            <br>
+
+            <p>
+                Relevant Coursework:
+                DBMS, Software Engineering, SQL,
+                Machine Learning, Artificial Intelligence,
+                Operating Systems
+            </p>
+
+            <br>
+
+            <h3>
+                Airforce School Avadi, Chennai
+            </h3>
+
+            <p>
+                2021 – 2023 · PCM + Computer Science
+            </p>
+
+            <p>
+                Percentage: 83%
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-heading">
+
+            <h2>
+                Let's <span>Connect</span>
+            </h2>
+
+            <p>
+                Have an opportunity or want to discuss AI and technology?
+            </p>
+
+        </div>
+
+        <div class="contact-box">
+
+            <p>
+                Feel free to reach out for opportunities,
+                collaborations or interesting projects.
+            </p>
+
+            <div class="contact-links">
+
+                <a
+                    class="contact-link"
+                    href="mailto:sumit8736814454@gmail.com"
+                >
+                    📧 Email
+                </a>
+
+                <a
+                    class="contact-link"
+                    href="#"
+                    target="_blank"
+                >
+                    💼 LinkedIn
+                </a>
+
+                <a
+                    class="contact-link"
+                    href="#"
+                    target="_blank"
+                >
+                    💻 GitHub
+                </a>
+
+                <a
+                    class="contact-link"
+                    href="#"
+                    target="_blank"
+                >
+                    🧩 LeetCode
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026 Sumit Kumar · Built with Python, FastAPI & AI
+
+    </footer>
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
